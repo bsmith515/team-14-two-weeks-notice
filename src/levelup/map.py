@@ -12,6 +12,7 @@ class GameMap:
 
     position_list: list 
     num_positions: int
+    starting_position: int = Position(0,0)
 
     def __init__(self):
         self.position_list = []
