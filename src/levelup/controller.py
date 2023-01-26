@@ -16,6 +16,7 @@ class Direction(Enum):
 class GameStatus:
     running: bool = False
     character: Character = Character(DEFAULT_CHARACTER_NAME)
+    current_position: tuple = ARBITRARY_INVALID_INITIALIZED_POSITION
 
 
 class GameController:
@@ -31,3 +32,9 @@ class GameController:
 
     def move(self, direction: Direction) -> None:
         print(f"Moved {direction.name}")
+
+    def set_character_position(self,xycoordinates: tuple) -> None:
+        print(f"Set Character position state for testing")
+        # TODO: IMPLEMENT THIS
+
+
