@@ -12,20 +12,24 @@ class TestCharacter(TestCase):
         test_character = Character()
         self.assertEqual(test_character.name, DEFAULT_CHARACTER_NAME)
  
-    def test_get_Name(self):
+    def test_get_name(self):
         fake_name = "Tiny"
         test_character = Character(fake_name)
         test_name = test_character.getName()
         self.assertEqual(test_name, fake_name)
 
-    def enter_map(self):
+    def test_enter_map(self):
        test_character = Character()
        test_game_map = GameMap()
        test_character.enterMap(test_game_map)
 
        self.assertIsNotNone(test_character.current_position)
 
-       
+    def test_get_position(self):
+        test_character = Character()
+        test_game_map = GameMap()
+        test_character.enterMap(test_game_map)
+        self.assertEqual(test_character.getPostion(), DEFAULT_POSITION)
 
 
 
