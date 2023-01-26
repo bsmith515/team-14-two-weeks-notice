@@ -11,3 +11,7 @@ Make file contains commands needed.
 * `make run` Runs the program
 
 Tom was here!!!
+
+Tish was here!
+
+Kedar was here! 
