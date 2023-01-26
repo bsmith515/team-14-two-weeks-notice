@@ -17,3 +17,9 @@ class TestGameMap(TestCase):
         starting_position = Position(5,5)
         expected_position = Position(5,6)
         self.assertEqual(expected_position, test_gamemap.calculate_position(starting_position, Direction.NORTH))
+
+    def test_is_position_valid(self):
+        test_gamemap = GameMap()
+        valid_position = Position(5,5)
+        self.assertTrue(test_gamemap.is_position_valid(valid_position))
+        

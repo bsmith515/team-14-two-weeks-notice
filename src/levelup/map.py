@@ -29,3 +29,6 @@ class GameMap:
     def calculate_position(self, starting_position: Position, direction: Direction):
         print(starting_position)
         return Position(5,6)
+
+    def is_position_valid(self, pos_to_validate: Position):
+        return pos_to_validate in self.position_list
