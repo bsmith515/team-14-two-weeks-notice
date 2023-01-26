@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from levelup.character import Character
 
 DEFAULT_CHARACTER_NAME = "Character"
-ARBITRARY_INVALID_INITIALIZED_POSITION = (-1,-1)
+ARBITRARY_INVALID_INITIALIZED_POSITION = (-1,-1,0)
 
 class Direction(Enum):
     NORTH = "n"
@@ -37,4 +37,7 @@ class GameController:
         print(f"Set Character position state for testing")
         # TODO: IMPLEMENT THIS
 
+    def set_move_count(self, move_count: int):
+        print(f"Set initial move count state for testing")
+        # TODO: IMPLEMENT THIS
 
