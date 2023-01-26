@@ -7,4 +7,6 @@ class direction(Enum):
     SOUTH = "s"
 
 class GameMap:
-    pass     
+    def get_total_positions(self):
+        return 100
+
