@@ -1,7 +1,7 @@
 from unittest import TestCase
 from levelup.character import Character, DEFAULT_POSITION
 
-class TestCharacter(testCase):
+class TestCharacter(TestCase):
     def test_init(self):
         fake_name = "Balthazar"
         test_character = Character(fake_name)
