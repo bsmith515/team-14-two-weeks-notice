@@ -32,6 +32,12 @@ class GameMap:
 
         if(direction == Direction.NORTH):
             return_position = Position(x_starting_pos, y_starting_pos+1)
+        elif(direction == Direction.SOUTH):
+            return_position = Position(x_starting_pos, y_starting_pos-1)
+        elif(direction == Direction.EAST):
+            return_position = Position(x_starting_pos+1, y_starting_pos)
+        elif(direction == Direction.WEST):
+            return_position = Position(x_starting_pos-1, y_starting_pos)         
 
         return return_position
 
