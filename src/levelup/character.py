@@ -2,14 +2,13 @@ from dataclasses import dataclass
 from levelup.position import Position
 from levelup.map import GameMap
 
-
 DEFAULT_POSITION = Position(0, 0)
 DEFAULT_CHARACTER_NAME = "Bubba"
 
 @dataclass
 class Character:
     name: str
-    current_position: Position(2, 4)
+    current_position: Position()
     testmap: GameMap()
     
     def __init__(self, name=DEFAULT_CHARACTER_NAME):
