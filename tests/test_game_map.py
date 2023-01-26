@@ -1,7 +1,7 @@
 from unittest import TestCase
 from levelup.map import GameMap
+from levelup.map import Direction
 from levelup.position import Position
-from levelup.controller import Direction
 
 class TestGameMap(TestCase):
     def test_get_total_positions(self):
@@ -22,4 +22,3 @@ class TestGameMap(TestCase):
         test_gamemap = GameMap()
         valid_position = Position(5,5)
         self.assertTrue(test_gamemap.is_position_valid(valid_position))
-        

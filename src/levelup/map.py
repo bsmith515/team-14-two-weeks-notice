@@ -1,8 +1,7 @@
 from enum import Enum
 from levelup.position import Position
-from levelup.controller import Direction
 
-class direction(Enum):
+class Direction(Enum):
     EAST = "e"
     WEST = "w"
     NORTH = "n"
@@ -28,8 +27,13 @@ class GameMap:
         return self.position_list         
 
     def calculate_position(self, starting_position: Position, direction: Direction):
-        print(starting_position)
-        return Position(5,6)
+        x_starting_pos = starting_position.coordinates[0]    
+        y_starting_pos = starting_position.coordinates[1]
+
+        if(direction == Direction.NORTH):
+            return_position = Position(x_starting_pos, y_starting_pos+1)
+
+        return return_position
 
     def is_position_valid(self, pos_to_validate: Position):
         return pos_to_validate in self.position_list
