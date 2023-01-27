@@ -11,7 +11,7 @@ class GameMap:
 
     position_list: list 
     num_positions: int
-    starting_position: int
+    starting_position: Position = Position(0,0)
 
     def __init__(self):
         self.position_list = []
@@ -19,13 +19,15 @@ class GameMap:
             for y in range(0, 10):
                 self.position_list.append(Position(x, y))
         self.num_positions = len(self.position_list)
-        self.starting_position = Position(0,0)
                     
     def get_total_positions(self) -> int:
         return self.num_positions
 
     def get_positions(self):
-        return self.position_list         
+        return self.position_list   
+
+    def get_starting_position(self):
+        return self.starting_position          
 
     def calculate_position(self, starting_position: Position, direction: Direction) -> Position:
         x_starting_pos = starting_position.coordinates[0]    

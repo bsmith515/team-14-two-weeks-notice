@@ -88,3 +88,8 @@ class TestGameMap(TestCase):
         test_gamemap = GameMap()
         valid_position = Position(5,5)
         self.assertTrue(test_gamemap.is_position_valid(valid_position))
+
+    def test_get_starting_position(self):
+        test_gamemap = GameMap()
+        expected_starting_position = Position(0,0)
+        self.assertEqual(expected_starting_position, test_gamemap.get_starting_position())
