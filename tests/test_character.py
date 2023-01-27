@@ -1,8 +1,13 @@
 from unittest import TestCase
 from levelup.character import Character, DEFAULT_POSITION, DEFAULT_CHARACTER_NAME
 from levelup.map import GameMap
+from levelup.position import Position
 
-
+class TestGameMap(GameMap):
+    def __init__(self):
+        GameMap.__init__(self)
+    def get_starting_position(self):
+        return Position(0,0)
 
 class TestCharacter(TestCase):
     def test_init_given_name(self):
@@ -22,16 +27,16 @@ class TestCharacter(TestCase):
 
     def test_enter_map(self):
        test_character = Character()
-       test_game_map = GameMap()
+       test_game_map = TestGameMap()
        test_character.enterMap(test_game_map)
 
        self.assertIsNotNone(test_character.current_position)
 
     def test_get_position(self):
         test_character = Character()
-        test_game_map = GameMap()
+        test_game_map = TestGameMap()
         test_character.enterMap(test_game_map)
-        #self.assertEqual(test_character.getPostion(), DEFAULT_POSITION)
+        self.assertEqual(test_character.getPosition(), DEFAULT_POSITION)
 
 
 

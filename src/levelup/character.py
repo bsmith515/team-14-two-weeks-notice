@@ -9,7 +9,7 @@ DEFAULT_CHARACTER_NAME = "Bubba"
 class Character:
     name: str
     current_position: Position
-    testmap: GameMap
+    gameMap: GameMap
     
     def __init__(self, name=DEFAULT_CHARACTER_NAME):
         self.name = name
@@ -18,12 +18,10 @@ class Character:
     def getName(self):
         return self.name
 
-    def enterMap(self, map):
-        #self.testmap = map
-        self.current_position = DEFAULT_POSITION
-
-
-
+    def getPosition(self):
+        return self.current_position
         
-
+    def enterMap(self, map):
+        self.gameMap = map
+        self.current_position = self.gameMap.get_starting_position()
 

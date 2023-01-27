@@ -12,7 +12,7 @@ class Direction(Enum):
     WEST = "w"
 
 
-@dataclass
+# @dataclass
 class GameStatus:
     running: bool = False
     character: Character = Character(DEFAULT_CHARACTER_NAME)
