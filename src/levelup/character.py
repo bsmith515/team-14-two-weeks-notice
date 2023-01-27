@@ -8,8 +8,8 @@ DEFAULT_CHARACTER_NAME = "Bubba"
 @dataclass
 class Character:
     name: str
-    #current_position: Position
-    #testmap: GameMap()
+    current_position: Position
+    testmap: GameMap
     
     def __init__(self, name=DEFAULT_CHARACTER_NAME):
         self.name = name

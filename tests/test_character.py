@@ -2,6 +2,8 @@ from unittest import TestCase
 from levelup.character import Character, DEFAULT_POSITION, DEFAULT_CHARACTER_NAME
 from levelup.map import GameMap
 
+
+
 class TestCharacter(TestCase):
     def test_init_given_name(self):
         fake_name = "Balthazar"
