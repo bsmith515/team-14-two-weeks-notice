@@ -60,6 +60,30 @@ class TestGameMap(TestCase):
         expected_position = Position(9,9)
         self.assertEqual(expected_position, test_gamemap.calculate_position(starting_position, Direction.EAST))
 
+    def test_calculate_position_upper_mid_go_north(self):
+        test_gamemap = GameMap()
+        starting_position = Position(5,9)
+        expected_position = Position(5,9)
+        self.assertEqual(expected_position, test_gamemap.calculate_position(starting_position, Direction.NORTH))
+
+    def test_calculate_position_lower_mid_go_south(self):
+        test_gamemap = GameMap()
+        starting_position = Position(5,0)
+        expected_position = Position(5,0)
+        self.assertEqual(expected_position, test_gamemap.calculate_position(starting_position, Direction.SOUTH))
+
+    def test_calculate_position_left_mid_go_west(self):
+        test_gamemap = GameMap()
+        starting_position = Position(0,5)
+        expected_position = Position(0,5)
+        self.assertEqual(expected_position, test_gamemap.calculate_position(starting_position, Direction.WEST))
+
+    def test_calculate_position_right_mid_go_east(self):
+        test_gamemap = GameMap()
+        starting_position = Position(9,5)
+        expected_position = Position(9,5)
+        self.assertEqual(expected_position, test_gamemap.calculate_position(starting_position, Direction.EAST))
+
     def test_is_position_valid(self):
         test_gamemap = GameMap()
         valid_position = Position(5,5)
