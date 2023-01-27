@@ -18,7 +18,6 @@ class MoveLibrary:
     def move_in_direction(self, direction):
         self.controller = GameController()
         self.controller.set_character_position((self.start_x, self.start_y))
-        self.controller.set_move_count(self.start_move_count)
         self.controller.move(Direction[direction])
 
     def character_xposition_should_be(self, expected):
@@ -33,12 +32,3 @@ class MoveLibrary:
             raise AssertionError(
                 "%s != %s" % (end_y, expected)
             )
-    
-    def character_movecount_should_be(self, expected):
-        end_move_count = self.controller.status.current_position[2]
-        if end_move_count != expected:
-            raise AssertionError(
-                "%s != %s" % (end_move_count, expected)
-            )
-    
-
