@@ -11,7 +11,7 @@ class GameMap:
 
     position_list: list 
     num_positions: int
-    starting_position: int = Position(0,0)
+    starting_position: int
 
     def __init__(self):
         self.position_list = []
@@ -19,14 +19,15 @@ class GameMap:
             for y in range(0, 10):
                 self.position_list.append(Position(x, y))
         self.num_positions = len(self.position_list)
+        self.starting_position = Position(0,0)
                     
-    def get_total_positions(self):
+    def get_total_positions(self) -> int:
         return self.num_positions
 
     def get_positions(self):
         return self.position_list         
 
-    def calculate_position(self, starting_position: Position, direction: Direction):
+    def calculate_position(self, starting_position: Position, direction: Direction) -> Position:
         x_starting_pos = starting_position.coordinates[0]    
         y_starting_pos = starting_position.coordinates[1]
 
@@ -41,5 +42,5 @@ class GameMap:
 
         return return_position
 
-    def is_position_valid(self, pos_to_validate: Position):
+    def is_position_valid(self, pos_to_validate: Position) -> bool:
         return pos_to_validate in self.position_list
