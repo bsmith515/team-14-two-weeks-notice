@@ -4,8 +4,8 @@ from levelup.map import GameMap, Direction
 from levelup.position import Position
 
 class TestGameMap(GameMap):
-    def __init__(self):
-        GameMap.__init__(self)
+    #def __init__(self):
+    #    GameMap.__init__(self)
     def get_starting_position(self):
         return Position(0,0)
 
@@ -46,4 +46,3 @@ class TestCharacter(TestCase):
         test_character.move(Direction.EAST)
         nPos = test_character.getPosition()       
         self.assertNotEqual(cPos, nPos)
-
