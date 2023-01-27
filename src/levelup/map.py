@@ -40,6 +40,9 @@ class GameMap:
         elif(direction == Direction.WEST):
             return_position = Position(x_starting_pos-1, y_starting_pos)         
 
+        if(not self.is_position_valid(return_position)):
+            return_position = starting_position
+        
         return return_position
 
     def is_position_valid(self, pos_to_validate: Position) -> bool:
