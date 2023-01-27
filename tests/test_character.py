@@ -1,6 +1,6 @@
 from unittest import TestCase
 from levelup.character import Character, DEFAULT_POSITION, DEFAULT_CHARACTER_NAME
-from levelup.map import GameMap
+from levelup.map import GameMap, Direction
 from levelup.position import Position
 
 class TestGameMap(GameMap):
@@ -38,10 +38,12 @@ class TestCharacter(TestCase):
         test_character.enterMap(test_game_map)
         self.assertEqual(test_character.getPosition(), DEFAULT_POSITION)
 
+    def test_move(self):
+        test_character = Character()
+        test_game_map = TestGameMap()
+        test_character.enterMap(test_game_map)
+        cPos = test_character.getPosition()
+        test_character.move(Direction.EAST)
+        nPos = test_character.getPosition()       
+        self.assertNotEqual(cPos, nPos)
 
-
-
-
- 
-    
-        

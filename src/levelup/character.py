@@ -20,8 +20,16 @@ class Character:
 
     def getPosition(self):
         return self.current_position
+
+    def setPosition(self, position):
+        self.current_position = position   
         
     def enterMap(self, map):
         self.gameMap = map
         self.current_position = self.gameMap.get_starting_position()
 
+    def move(self, direction):
+        cPos = self.getPosition()
+        nPos = self.gameMap.calculate_position(cPos, direction)
+        self.setPosition(nPos)
+  
